@@ -2,8 +2,8 @@
 \ProvidesClass{miyalab}
   [2016/07/13 Yoshiki Sato]
 
-%\LoadClass[a4j, twocolumn, 9pt, uplatex, dvipdfmx]{jsarticle}
-\LoadClass[a4j, twocolumn, 9pt, dvipdfmx]{jsarticle}
+\LoadClass[a4j, twocolumn, 9pt, uplatex, dvipdfmx]{jsarticle}
+%\LoadClass[a4j, twocolumn, 9pt, dvipdfmx]{jsarticle}
 
 \let\@etitle\@empty
 \newcommand{\etitle}[1]{\gdef\@etitle{#1}}
