@@ -1,3 +1,6 @@
+# ipsjunsrt の一部改変版を利用
+ipsjunsrt.bst
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

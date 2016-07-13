@@ -1,0 +1,148 @@
+% 古いコマンドやパッケージを警告
+% nag - Detecting and warning about obsolete LaTeX commands
+% http://www.ctan.org/tex-archive/macros/latex/contrib/nag
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[dvipdfmx]{miyalab}
+
+% コメントアウト
+\usepackage{comment}
+
+% amsmath が提供しない数式環境を使用した場合に警告
+% onlyamsmath
+% http://www.ctan.org/tex-archive/macros/latex/contrib/onlyamsmath
+\usepackage[all, warning]{onlyamsmath}
+
+\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+
+% 日本語のしおり文字化け対策
+\begin{comment}
+\ifx\kanjiskip\undefined\else
+  \usepackage{atbegshi}
+  \ifx\ucs\undefined
+	\ifnum 42146=\euc"A4A2
+	  \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+	\else
+	  \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+	\fi
+  \else
+	\AtBeginShipoutFirst{\special{pdf:tounicode UTF8-UCS2}}
+  \fi
+	\usepackage[dvipdfmx,colorlinks=false]{hyperref}
+\fi
+\end{comment}
+
+
+\usepackage{graphicx}
+\usepackage{amssymb} % 記号
+
+%\renewcommand{\baselinestretch}{1.0} % 行送りを倍率で設定
+\setlength{\baselineskip}{9pt}       % 行送りを値で設定
+
+% Author-year 形式を利用する場合は natbib 環境を利用する
+% \bibliographystyle{plainnat} 等を利用
+%\usepackage{natbib}
+%\bibpunct[:]{(}{)}{,}{a}{}{,}
+
+% 表関連
+\usepackage{colortbl,array,xcolor}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering}X}
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+
+% 箇条書き
+\usepackage{enumitem}
+
+
+% レイアウトの確認
+%\usepackage{layout}
+
+\title{東京学芸大学 計算機科学研究室 (宮寺研究室) \LaTeX クラスファイル}
+\etitle{Development of miyalab.cls}
+
+\affiliation{宮寺研究室}
+\studentid{R16-9003}
+\author{佐藤 克己}
+%\date{2016/7/13}
+
+\begin{document}
+
+\maketitle
+
+\section{章のタイトル}
+\subsection{節のタイトル}
+\subsubsection{項のタイトル}
+
+\section{箇条書き}
+
+\begin{enumerate}[labelindent=1\parindent,leftmargin=*,label=第\arabic*位.]
+		\item お寿司
+		\item お寿司
+		\item お寿司
+\end{enumerate}
+
+\begin{enumerate}[labelindent=2\parindent,leftmargin=*,label=第\arabic*位.]
+		\item お寿司
+		\item お寿司
+		\item お寿司
+\end{enumerate}
+
+\section{引用}
+
+\cite{miyalab-cls}
+
+\cite{latex2e}
+
+\section{図}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{image/sample.pdf}
+	\caption{サンプル画像 (PDF)}
+	\label{fig:sample-pdf}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{image/sample.png}
+	\caption{サンプル画像 (PNG)}
+	\label{fig:sample-png}
+\end{figure}
+
+画像の参照は, 図 \ref{fig:sample-pdf}, 図 \ref{fig:sample-png} のように行う。
+
+\section{表}
+
+表の例を表 \ref{tab:table-sample} に示す.
+
+\begin{table}[htb]
+	\caption{表の例}
+	\label{tab:table-sample}
+	\begin{tabularx}{\linewidth}{|C|C|C|}
+		\hline
+		\rowcolor[gray]{0.8}
+		\textbf{ヘッダ1} & \textbf{ヘッダ2} & \textbf{ヘッダ3}  \tabularnewline \hline
+		データ1          & データ1-1 \\
+		                   データ1-2        & \checkmark        \tabularnewline \hline
+		データ2          & データ2-1 \\
+		                   データ2-2        &                   \tabularnewline \hline
+		データ3          & データ3-1 \\
+		                   データ3-2 \\
+						   データ3-3        &                   \tabularnewline \hline
+		データ4          & データ4-1        &  \checkmark       \tabularnewline \hline
+		データ5          & データ5-1 \\ 
+		                   データ5-2        &  \checkmark       \tabularnewline \hline
+	\end{tabularx}
+\end{table}
+
+\section{コメントアウト}
+
+\begin{comment}
+	この部分はコメントアウトされる
+\end{comment}
+
+\bibliographystyle{ipsjunsrt}
+
+\bibliography{sample-bib}
+
+\end{document}  
