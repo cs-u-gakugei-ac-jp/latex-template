@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-$latex			= 'platex -synctex=1 -interaction=batchmode -kanji=utf-8 %O %S';
-#$latex			= 'uplatex -synctex=1 -halt-on-error';
-#$latex_silent	= 'uplatex -synctex=1 -halt-on-error -interaction=batchmode';
+#$latex			= 'platex -synctex=1 -interaction=batchmode -kanji=utf-8 %O %S';
+$latex			= 'uplatex -synctex=1 -halt-on-error';
+$latex_silent	= 'uplatex -synctex=1 -halt-on-error -interaction=batchmode';
 $dvipdf			= 'dvipdfmx %O -o %D %S';
 $bibtex			= 'pbibtex';
 $biber			= 'biber --bblencoding=utf8 -u -U --output_safechars';
