@@ -4,6 +4,31 @@
 
 \LoadClass[a4j, twocolumn, 9pt, uplatex, dvipdfmx]{jsarticle}
 
+% 古いコマンドやパッケージを警告
+% nag - Detecting and warning about obsolete LaTeX commands
+% http://www.ctan.org/tex-archive/macros/latex/contrib/nag
+\RequirePackage[l2tabu, orthodox]{nag}
+
+% コメントアウト
+\usepackage{comment}
+
+% 日本語のしおり文字化け対策
+\ifx\kanjiskip\undefined\else
+  \usepackage{atbegshi}
+  \ifx\ucs\undefined
+	\ifnum 42146=\euc"A4A2
+	  \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+	\else
+	  \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+	\fi
+  \else
+	\AtBeginShipoutFirst{\special{pdf:tounicode UTF8-UCS2}}
+  \fi
+	\usepackage[dvipdfmx,colorlinks=false]{hyperref}
+\fi
+
+
+
 \let\@subtitle\@empty
 \newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
 
