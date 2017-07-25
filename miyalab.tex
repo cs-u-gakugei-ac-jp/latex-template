@@ -1,37 +1,4 @@
-% 古いコマンドやパッケージを警告
-% nag - Detecting and warning about obsolete LaTeX commands
-% http://www.ctan.org/tex-archive/macros/latex/contrib/nag
-\RequirePackage[l2tabu, orthodox]{nag}
-
 \documentclass[dvipdfmx]{miyalab}
-
-% コメントアウト
-\usepackage{comment}
-
-% amsmath が提供しない数式環境を使用した場合に警告
-% onlyamsmath
-% http://www.ctan.org/tex-archive/macros/latex/contrib/onlyamsmath
-\usepackage[all, warning]{onlyamsmath}
-
-\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
-
-% 日本語のしおり文字化け対策
-\begin{comment}
-\ifx\kanjiskip\undefined\else
-  \usepackage{atbegshi}
-  \ifx\ucs\undefined
-	\ifnum 42146=\euc"A4A2
-	  \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
-	\else
-	  \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
-	\fi
-  \else
-	\AtBeginShipoutFirst{\special{pdf:tounicode UTF8-UCS2}}
-  \fi
-	\usepackage[dvipdfmx,colorlinks=false]{hyperref}
-\fi
-\end{comment}
-
 
 \usepackage{graphicx}
 \usepackage{amssymb} % 記号
@@ -58,7 +25,7 @@
 \affiliation{宮寺研究室}
 \studentid{R16-9003}
 \author{佐藤 克己}
-%\date{2016/7/13}
+%\date{2017/7/25}
 
 \begin{document}
 
