@@ -95,10 +95,10 @@
 	\@startsection{subsection}{1}{\z@}%
 	{0.2\Cvs}% 前アキ
 	{0.1\Cvs}% 後アキ
-	{\normalfont\small\headfont\raggedright}}
+	{\normalfont\normalsize\headfont\raggedright}}
 
 \renewcommand{\subsubsection}{%
 	\@startsection{subsubsection}{1}{\z@}%
 	{0.2\Cvs}% 前アキ
 	{0.1\Cvs}% 後アキ
-	{\normalfont\small\headfont\raggedright}}
+	{\normalfont\normalsize\headfont\raggedright}}
