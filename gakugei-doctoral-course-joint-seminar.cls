@@ -9,6 +9,13 @@
 % http://www.ctan.org/tex-archive/macros/latex/contrib/nag
 \RequirePackage[l2tabu, orthodox]{nag}
 
+% amsmath が提供しない数式環境を使用した場合に警告
+% onlyamsmath
+% http://www.ctan.org/tex-archive/macros/latex/contrib/onlyamsmath
+\usepackage[all, warning]{onlyamsmath}
+
+\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+
 % コメントアウト
 \usepackage{comment}
 
